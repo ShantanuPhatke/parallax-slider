@@ -17,17 +17,18 @@ const previousSlide = imgNo => {
 }
 
 let counter = 0;
-if (counter === 0) {
-    select("#previous-btn").style.visibility = "hidden";
-}
+// if (counter === 0) {
+//     select("#previous-btn").style.visibility = "hidden";
+// }
 
-select("#next-btn").addEventListener("click", () => {
+const refreshInterval = setInterval(() => {
     counter++;
     if (counter != 0) {
-        select("#previous-btn").style.visibility = "visible";
+        // select("#previous-btn").style.visibility = "visible";
     }
     if (counter === 5) {
-        select("#next-btn").style.visibility = "hidden";
+        // select("#next-btn").style.visibility = "hidden";
+        clearInterval(refreshInterval);
     }
 
     nextSlide(3);
@@ -37,23 +38,43 @@ select("#next-btn").addEventListener("click", () => {
     setTimeout(() => {
         nextSlide(1);
     }, 400);
-});
+}, 3000);
 
-select("#previous-btn").addEventListener("click", () => {
-    counter--;
-    if (counter != 5) {
-        select("#next-btn").style.visibility = "visible";
-    }
-    if (counter === 0) {
-        select("#previous-btn").style.visibility = "hidden";
-    }
 
-    previousSlide(3);
-    setTimeout(() => {
-        previousSlide(2);
-    }, 300);
-    setTimeout(() => {
-        previousSlide(1);
-    }, 400);
-});
+
+// select("#next-btn").addEventListener("click", () => {
+//     counter++;
+//     if (counter != 0) {
+//         select("#previous-btn").style.visibility = "visible";
+//     }
+//     if (counter === 5) {
+//         select("#next-btn").style.visibility = "hidden";
+//     }
+
+//     nextSlide(3);
+//     setTimeout(() => {
+//         nextSlide(2);
+//     }, 300);
+//     setTimeout(() => {
+//         nextSlide(1);
+//     }, 400);
+// });
+
+// select("#previous-btn").addEventListener("click", () => {
+//     counter--;
+//     if (counter != 5) {
+//         select("#next-btn").style.visibility = "visible";
+//     }
+//     if (counter === 0) {
+//         select("#previous-btn").style.visibility = "hidden";
+//     }
+
+//     previousSlide(3);
+//     setTimeout(() => {
+//         previousSlide(2);
+//     }, 300);
+//     setTimeout(() => {
+//         previousSlide(1);
+//     }, 400);
+// });
 
