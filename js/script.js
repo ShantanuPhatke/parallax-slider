@@ -33,10 +33,10 @@ select("#next-btn").addEventListener("click", () => {
     nextSlide(3);
     setTimeout(() => {
         nextSlide(2);
-    }, 200);
+    }, 300);
     setTimeout(() => {
         nextSlide(1);
-    }, 100);
+    }, 400);
 });
 
 select("#previous-btn").addEventListener("click", () => {
@@ -51,9 +51,9 @@ select("#previous-btn").addEventListener("click", () => {
     previousSlide(3);
     setTimeout(() => {
         previousSlide(2);
-    }, 200);
+    }, 300);
     setTimeout(() => {
         previousSlide(1);
-    }, 100);
+    }, 400);
 });
 
