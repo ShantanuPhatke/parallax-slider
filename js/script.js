@@ -17,8 +17,6 @@ const previousSlide = imgNo => {
 }
 
 let counter = 0;
-select("#previous-btn").style.visibility = "hidden";
-select("#next-btn").style.visibility = "hidden";
 
 const refreshInterval = setInterval(() => {
     counter++;
