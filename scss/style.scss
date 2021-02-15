@@ -7,11 +7,10 @@ body {
 .container {
   overflow: hidden;
   .slider {
-    background: #039cdb;
+    background-color: #039cdb;
     width: 100%;
     padding-top: 50%;
     position: relative;
-
     .next,
     .previous {
       z-index: 1;
@@ -67,6 +66,30 @@ body {
         right: 0;
         left: 0;
       }
+
+      .clouds {
+        opacity: 1;
+        background-image: url("/assets/images/cloud.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: cloudAnimation 60s linear infinite;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
     }
+  }
+}
+
+// Cloud animation
+@keyframes cloudAnimation {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -5440px;
   }
 }

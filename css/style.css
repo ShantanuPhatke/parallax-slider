@@ -9,7 +9,7 @@ body {
 }
 
 .container .slider {
-  background: #039cdb;
+  background-color: #039cdb;
   width: 100%;
   padding-top: 50%;
   position: relative;
@@ -82,5 +82,38 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.container .slider .images .clouds {
+  opacity: 1;
+  background-image: url("/assets/images/cloud.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: cloudAnimation 60s linear infinite;
+          animation: cloudAnimation 60s linear infinite;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@-webkit-keyframes cloudAnimation {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -5440px;
+  }
+}
+
+@keyframes cloudAnimation {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -5440px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
