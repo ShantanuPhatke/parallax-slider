@@ -29,7 +29,7 @@ const refreshInterval = setInterval(() => {
     nextSlide(3);
     setTimeout(() => {
         nextSlide(2);
-    }, 300);
+    }, 200);
     setTimeout(() => {
         nextSlide(1);
     }, 400);
