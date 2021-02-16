@@ -86,7 +86,7 @@ body {
 
 .container .slider .images .clouds {
   opacity: 1;
-  background-image: url("/assets/images/cloud.png");
+  background-image: url("../assets/images/cloud.png");
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-animation: cloudAnimation 60s linear infinite;
