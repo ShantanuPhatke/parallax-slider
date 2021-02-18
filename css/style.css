@@ -85,7 +85,7 @@ body {
 }
 
 .container .slider .images .clouds {
-  opacity: 1;
+  opacity: 0.8;
   background-image: url("../assets/images/cloud.png");
   background-size: cover;
   background-repeat: no-repeat;
