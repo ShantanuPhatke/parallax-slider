@@ -104,7 +104,7 @@ body {
     background-position: 0px;
   }
   100% {
-    background-position: -3000px;
+    background-position: -250vw;
   }
 }
 
@@ -113,7 +113,7 @@ body {
     background-position: 0px;
   }
   100% {
-    background-position: -3000px;
+    background-position: -250vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
