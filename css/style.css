@@ -89,8 +89,8 @@ body {
   background-image: url("../assets/images/cloud.png");
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-animation: cloudAnimation 60s linear infinite;
-          animation: cloudAnimation 60s linear infinite;
+  -webkit-animation: cloudAnimation 30s linear infinite;
+          animation: cloudAnimation 30s linear infinite;
   height: 100%;
   position: absolute;
   top: 0;
@@ -104,7 +104,7 @@ body {
     background-position: 0px;
   }
   100% {
-    background-position: -5440px;
+    background-position: -3000px;
   }
 }
 
@@ -113,7 +113,7 @@ body {
     background-position: 0px;
   }
   100% {
-    background-position: -5440px;
+    background-position: -3000px;
   }
 }
 /*# sourceMappingURL=style.css.map */
