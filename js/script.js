@@ -16,6 +16,10 @@ const previousSlide = imgNo => {
     select(`#img-${imgNo}`).style.transform = `translateX(calc(${currentTranslateX}px + 16.67%))`;
 }
 
+const disableClick = () => select("#parallax_slider").style.pointerEvents = "none";
+
+const enableClick = () => select("#parallax_slider").style.pointerEvents = "auto";
+
 let counter = 0;
 
 const refreshInterval = setInterval(() => {
@@ -33,11 +37,11 @@ const refreshInterval = setInterval(() => {
     setTimeout(() => {
         nextSlide(1);
     }, 400);
-}, 3000);
-
-
+}, 2500);
 
 select("#next-btn").addEventListener("click", () => {
+    disableClick(); // Disables clicks on the slider as the animation starts
+
     counter++;
     if (counter != 0) {
         select("#previous-btn").style.visibility = "visible";
@@ -53,9 +57,17 @@ select("#next-btn").addEventListener("click", () => {
     setTimeout(() => {
         nextSlide(1);
     }, 400);
+    
+    // Enables clicks on the slider after animation is completed 
+    setTimeout(() => {
+        enableClick();
+    }, 1400);
+
 });
 
 select("#previous-btn").addEventListener("click", () => {
+    disableClick(); // Disables clicks on the slider as the animation starts
+
     counter--;
     if (counter != 5) {
         select("#next-btn").style.visibility = "visible";
@@ -71,5 +83,11 @@ select("#previous-btn").addEventListener("click", () => {
     setTimeout(() => {
         previousSlide(1);
     }, 400);
+
+    // Enables clicks on the slider after animation is completed 
+    setTimeout(() => {
+        enableClick();
+    }, 1400);
+
 });
 
