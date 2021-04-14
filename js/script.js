@@ -20,24 +20,45 @@ const disableClick = () => select("#parallax_slider").style.pointerEvents = "non
 
 const enableClick = () => select("#parallax_slider").style.pointerEvents = "auto";
 
+const removeScrollListener = () => document.removeEventListener('scroll', initAnimation);
+
+const parallax_slider = select("#parallax_slider");
+
 let counter = 0;
 
-const refreshInterval = setInterval(() => {
-    counter++;
-    if (counter === 5) {
-        select("#previous-btn").style.visibility = "visible";
-        select("#next-btn").style.visibility = "hidden";
-        clearInterval(refreshInterval);
-    }
+const initAnimation = () => {
+    if (counter == 0 && isInViewport(parallax_slider)) {
+        const refreshInterval = setInterval(() => {
+            counter++;
+            if (counter === 5) {
+                select("#previous-btn").style.visibility = "visible";
+                select("#next-btn").style.visibility = "hidden";
+                clearInterval(refreshInterval);
+            }
+            nextSlide(3);
+            setTimeout(() => {
+                nextSlide(2);
+            }, 200);
+            setTimeout(() => {
+                nextSlide(1);
+            }, 400);
+        }, 2500);
 
-    nextSlide(3);
-    setTimeout(() => {
-        nextSlide(2);
-    }, 200);
-    setTimeout(() => {
-        nextSlide(1);
-    }, 400);
-}, 2500);
+        removeScrollListener();
+    }
+}
+
+const isInViewport = element => {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+document.addEventListener('scroll', initAnimation);
 
 select("#next-btn").addEventListener("click", () => {
     disableClick(); // Disables clicks on the slider as the animation starts

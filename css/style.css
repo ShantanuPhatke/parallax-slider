@@ -25,11 +25,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -46,13 +46,13 @@ body {
   background: white;
   cursor: pointer;
   -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .container .slider .next:hover img,
 .container .slider .previous:hover img {
   -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .container .slider .next {
@@ -90,7 +90,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-animation: cloudAnimation 30s linear infinite;
-  animation: cloudAnimation 30s linear infinite;
+          animation: cloudAnimation 30s linear infinite;
   height: 100%;
   position: absolute;
   top: 0;
