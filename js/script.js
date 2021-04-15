@@ -49,7 +49,6 @@ const initAnimation = () => {
 }
 
 const isInViewport = () => {
-    console.log("In viewport");
     const parallax_slider = select("#parallax_slider");
     const rect = parallax_slider.getBoundingClientRect();
     return (
