@@ -22,34 +22,36 @@ const enableClick = () => select("#parallax_slider").style.pointerEvents = "auto
 
 const removeScrollListener = () => document.removeEventListener('scroll', initAnimation);
 
-const parallax_slider = select("#parallax_slider");
-
 let counter = 0;
 
 const initAnimation = () => {
-    if (counter == 0 && isInViewport(parallax_slider)) {
+    if (counter == 0 && isInViewport()) {
         const refreshInterval = setInterval(() => {
-            counter++;
-            if (counter === 5) {
-                select("#previous-btn").style.visibility = "visible";
-                select("#next-btn").style.visibility = "hidden";
-                clearInterval(refreshInterval);
+            if (isInViewport()) {
+                counter++;
+                if (counter === 5) {
+                    select("#previous-btn").style.visibility = "visible";
+                    select("#next-btn").style.visibility = "hidden";
+                    clearInterval(refreshInterval);
+                }
+                nextSlide(3);
+                setTimeout(() => {
+                    nextSlide(2);
+                }, 200);
+                setTimeout(() => {
+                    nextSlide(1);
+                }, 400);
             }
-            nextSlide(3);
-            setTimeout(() => {
-                nextSlide(2);
-            }, 200);
-            setTimeout(() => {
-                nextSlide(1);
-            }, 400);
         }, 2500);
 
         removeScrollListener();
     }
 }
 
-const isInViewport = element => {
-    const rect = element.getBoundingClientRect();
+const isInViewport = () => {
+    console.log("In viewport");
+    const parallax_slider = select("#parallax_slider");
+    const rect = parallax_slider.getBoundingClientRect();
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
